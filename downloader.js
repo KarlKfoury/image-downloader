@@ -1,3 +1,5 @@
+var ssQuery = "bycicle"
+
 var puppeteer = require("puppeteer")
 var enar = "https://translate.google.com/?sl=en&tl=ar&op=translate"
 var enfi = "https://translate.google.com/?sl=en&tl=tl&op=translate"
@@ -45,7 +47,7 @@ await more.click()
 var imgs = await page.$$("div > a:nth-child(1) > div:nth-child(1) > img:nth-child(1)")
 await console.log(imgs.length)
 var numb = 0
-while(numb < imgs.length) {imgs[numb].screenshot({path: "/home/carl/nodelearn/imgs/soura" + (inc + numb) + ".png"})
+while(numb < imgs.length) {imgs[numb].screenshot({path: "imgs/" + ssQuery + (inc + numb) + ".png"})
 numb++
 await page.waitFor(3000)
 }
@@ -54,4 +56,4 @@ numbz++
 }
 })
 }
-scrape("bycicle")
+scrape(ssQuery)
